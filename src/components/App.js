@@ -1,13 +1,24 @@
-
 import React from "react";
-import './../styles/App.css';
+import "./../styles/App.css";
 
 const App = () => {
-  return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
-}
+  // make timer using hooks in react
 
-export default App
+  const [timer, setTimer] = React.useState(0);
+
+  let id;
+  React.useEffect(() => {
+    id = setInterval(() => {
+      setTimer(timer + 1);
+    });
+
+    return () => {
+      clearInterval(id);
+    };
+  }, [timer]);
+
+  console.log("Hello World");
+  return <div>"You have been in this page for {timer} seconds"</div>;
+};
+
+export default App;

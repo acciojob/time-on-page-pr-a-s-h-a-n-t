@@ -18,7 +18,7 @@ const App = () => {
   }, [timer]);
 
   console.log("Hello World");
-  return <div>"You have been in this page for {timer} seconds"</div>;
+  return <div id= "main">"You have been in this page for {timer} seconds"</div>;
 };
 
 export default App;
